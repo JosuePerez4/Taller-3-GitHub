@@ -13,8 +13,5 @@ jobs:
       - name: 📂 Mostrar archivos del repositorio
         run: ls -la  # Lista todos los archivos y carpetas
 
-      - name: 🔍 Mostrar cambios en el último commit
-        run: git diff --name-only HEAD~1 HEAD  # Muestra los archivos modificados
-
       - name: ✅ Finalización
-        run: echo "🎉 Verificación completada"
+        run: echo "🎉 Verificación completada, todo salió bien"
