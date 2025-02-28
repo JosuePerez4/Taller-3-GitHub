@@ -1,1 +1,1 @@
-Vamos a ver si este documento pasa la prueba automatizada de gitHUb (actions)
+Añadiendo una línea para probar las reglas, si está esta línea dentro del txt, es pq sí funcionó
