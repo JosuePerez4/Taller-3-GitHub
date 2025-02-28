@@ -1,1 +1,1 @@
-Añadiendo una línea para probar las reglas, si está esta línea dentro del txt, es pq sí funcionó
+Probar si las reglas sirven o no
