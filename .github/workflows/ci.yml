@@ -1,0 +1,28 @@
+name: 🚀 Pruebas Automáticas
+
+on: [push, pull_request]  # Se ejecuta en cada push o pull request
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  # El sistema operativo en el que se ejecuta
+
+    steps:
+      - name: 📥 Clonar el repositorio
+        uses: actions/checkout@v3  # Descarga el código del repo
+
+      - name: 🔧 Configurar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'  # Instala Node.js versión 18
+
+      - name: 📦 Instalar dependencias
+        run: npm install  # Ejecuta "npm install" para instalar paquetes
+
+      - name: 🚀 Ejecutar pruebas
+        run: npm test  # Ejecuta pruebas automáticas con Jest o Mocha (según tu setup)
+
+      - name: 📂 Listar archivos del repositorio
+        run: ls -la  # Muestra todos los archivos y carpetas en la terminal
+
+      - name: 🔥 Imprimir mensaje de éxito
+        run: echo "✅ Todo está funcionando correctamente"
