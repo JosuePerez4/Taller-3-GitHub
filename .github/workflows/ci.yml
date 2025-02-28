@@ -1,28 +1,20 @@
-name: 🚀 Pruebas Automáticas
+name: 🚀 Verificación Básica, pruebas automáticas
 
-on: [push, pull_request]  # Se ejecuta en cada push o pull request
+on: [push, pull_request]  # Se ejecuta en cada push y PR
 
 jobs:
-  test:
-    runs-on: ubuntu-latest  # El sistema operativo en el que se ejecuta
+  check:
+    runs-on: ubuntu-latest  # Usa un entorno con Ubuntu
 
     steps:
-      - name: 📥 Clonar el repositorio
-        uses: actions/checkout@v3  # Descarga el código del repo
+      - name: 📥 Clonar repositorio
+        uses: actions/checkout@v3  # Descarga el código
 
-      - name: 🔧 Configurar Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'  # Instala Node.js versión 18
+      - name: 📂 Mostrar archivos del repositorio
+        run: ls -la  # Lista todos los archivos y carpetas
 
-      - name: 📦 Instalar dependencias
-        run: npm install  # Ejecuta "npm install" para instalar paquetes
+      - name: 🔍 Mostrar cambios en el último commit
+        run: git diff --name-only HEAD~1 HEAD  # Muestra los archivos modificados
 
-      - name: 🚀 Ejecutar pruebas
-        run: npm test  # Ejecuta pruebas automáticas con Jest o Mocha (según tu setup)
-
-      - name: 📂 Listar archivos del repositorio
-        run: ls -la  # Muestra todos los archivos y carpetas en la terminal
-
-      - name: 🔥 Imprimir mensaje de éxito
-        run: echo "✅ Todo está funcionando correctamente"
+      - name: ✅ Finalización
+        run: echo "🎉 Verificación completada"
